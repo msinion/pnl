@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.ucv.lab12.controller.DocenteController"
+      spacing="12" style="-fx-padding:18; -fx-background-color:#EEF2F3;">
+
+    <Label text="PNL | Registro de docentes"
+           style="-fx-font-size:22; -fx-font-weight:bold; -fx-text-fill:#263238;">
+        <font><Font size="22.0"/></font>
+    </Label>
+    <Separator/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT"
+          style="-fx-background-color:white; -fx-padding:12; -fx-border-color:#CFD8DC;">
+        <Label text="Docente:" style="-fx-font-weight:bold;"/>
+        <TextField fx:id="txtNombres" promptText="Buscar por apellidos y nombres" prefWidth="240"/>
+        <Label text="DNI:" style="-fx-font-weight:bold;"/>
+        <TextField fx:id="txtDni" promptText="Buscar DNI" prefWidth="130"/>
+        <Button text="Buscar" onAction="#onBuscar" prefWidth="90"
+                style="-fx-background-color:#00A896;-fx-text-fill:white;-fx-cursor:hand;-fx-font-weight:bold;"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="+ Nuevo docente" onAction="#onCrear" prefWidth="150"
+                style="-fx-background-color:#00A896;-fx-text-fill:white;-fx-cursor:hand;-fx-font-weight:bold;"/>
+        <Button text="Eliminar seleccionados" onAction="#onEliminarSeleccionados" prefWidth="180"
+                style="-fx-background-color:#EF476F;-fx-text-fill:white;-fx-cursor:hand;-fx-font-weight:bold;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="lblTotal" text="Total: 0 docente(s)" style="-fx-font-style:italic; -fx-text-fill:#555;"/>
+    </HBox>
+
+    <TableView fx:id="tableView" editable="true" VBox.vgrow="ALWAYS"
+               style="-fx-background-color:white; -fx-border-color:#B0BEC5;">
+        <columns>
+            <TableColumn fx:id="colSeleccion" text="" prefWidth="42" maxWidth="42" resizable="false"/>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50" style="-fx-alignment:CENTER;"/>
+            <TableColumn fx:id="colNombres" text="Docente" prefWidth="220"/>
+            <TableColumn fx:id="colDni" text="DNI" prefWidth="100"/>
+            <TableColumn fx:id="colCelular" text="Celular" prefWidth="110"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="170"/>
+            <TableColumn fx:id="colSituacion" text="Situacion laboral" prefWidth="130"/>
+            <TableColumn fx:id="colActivo" text="Activo" prefWidth="70" style="-fx-alignment:CENTER;"/>
+            <TableColumn fx:id="colAcciones" text="Acciones" prefWidth="155" style="-fx-alignment:CENTER;"/>
+        </columns>
+        <placeholder><Label text="No hay docentes registrados." style="-fx-text-fill:#888;"/></placeholder>
+    </TableView>
+</VBox>

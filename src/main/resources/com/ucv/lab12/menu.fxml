@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.ucv.lab12.controller.MenuController"
+            style="-fx-background-color:#EEF2F3;">
+
+    <left>
+        <VBox prefWidth="230" spacing="18" style="-fx-background-color:#263238; -fx-padding:26;">
+            <Label text="PNL"
+                   style="-fx-text-fill:white; -fx-font-size:32; -fx-font-weight:bold;">
+                <font><Font size="32"/></font>
+            </Label>
+            <Label text="Gestion administrativa UGEL Ilo"
+                   wrapText="true"
+                   style="-fx-text-fill:#B0BEC5; -fx-font-size:13;"/>
+
+            <Separator style="-fx-background-color:#455A64;"/>
+
+            <Button text="Docentes" onAction="#abrirDocentes" prefWidth="180" prefHeight="42"
+                    style="-fx-background-color:#00A896;-fx-text-fill:white;-fx-font-size:14;-fx-font-weight:bold;-fx-cursor:hand;"/>
+
+            <Button text="Deudas administrativas" onAction="#abrirDeudas" prefWidth="180" prefHeight="42"
+                    style="-fx-background-color:#F9A826;-fx-text-fill:#263238;-fx-font-size:14;-fx-font-weight:bold;-fx-cursor:hand;"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button text="Salir" onAction="#salir" prefWidth="180" prefHeight="38"
+                    style="-fx-background-color:#455A64;-fx-text-fill:white;-fx-font-size:13;-fx-font-weight:bold;-fx-cursor:hand;"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox alignment="CENTER_LEFT" spacing="18" style="-fx-padding:42;">
+            <Label text="Panel de control"
+                   style="-fx-text-fill:#263238; -fx-font-size:28; -fx-font-weight:bold;">
+                <font><Font size="28"/></font>
+            </Label>
+            <Label text="Seleccione un modulo para registrar docentes, consultar deudas y generar reportes."
+                   wrapText="true"
+                   style="-fx-text-fill:#546E7A; -fx-font-size:15;"/>
+
+            <HBox spacing="14">
+                <VBox prefWidth="220" spacing="8" style="-fx-background-color:white; -fx-padding:18; -fx-border-color:#CFD8DC;">
+                    <Label text="Docentes" style="-fx-text-fill:#263238; -fx-font-size:17; -fx-font-weight:bold;"/>
+                    <Label text="Registro basico del personal docente." wrapText="true" style="-fx-text-fill:#607D8B;"/>
+                </VBox>
+                <VBox prefWidth="250" spacing="8" style="-fx-background-color:white; -fx-padding:18; -fx-border-color:#CFD8DC;">
+                    <Label text="Deudas" style="-fx-text-fill:#263238; -fx-font-size:17; -fx-font-weight:bold;"/>
+                    <Label text="Control de montos, estados y filtros administrativos." wrapText="true" style="-fx-text-fill:#607D8B;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <Label text="PNL - Prototipo funcional"
+               BorderPane.alignment="CENTER"
+               style="-fx-padding:10; -fx-text-fill:#607D8B;"/>
+    </bottom>
+</BorderPane>
